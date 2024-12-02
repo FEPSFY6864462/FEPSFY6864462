@@ -41,7 +41,7 @@ p.ex1 {
     .myslides {display:none;}
 
   </style>
-  <body style="background-color:#ffffff;margin-left:50px;"></body>
+  <body style="background-color:#ffffff;margin-left:50px;">
   
   <!--Table of contents-->
   <table>
@@ -98,7 +98,7 @@ p.ex1 {
   <p class="ex1">
 
     <h4 style="font-family:calibri;">The first type of propulsion is nuclear thermal propulsion (NTP). NTP works by running liquid hydrogen through the core of a nuclear reactor which in turn splits uranium atoms which releases heat in the form of fission. The liquid propellant is converted into a hot gas which rapidly expands and leaves the nozzle at a high velocity producing thrust (Office of Nuclear Energy, 2021) as shown in figure 1.</h4>
-    <img scr="NTPimage.png" alt="NTPimage" widht="1400" height="900">
+    <img scr="NTPimage.png" alt="NTPimage" width="1400" height="900">
     <h4 style="font-family:calibri;">The second type is nuclear electric propulsion (NEP). Much like NTP, NEP uses a reactor to provide heat from fission but this thermal energy is converted into electric power where it is then used to ionize a propellant which accelerates out the nozzle producing thrust. These are call ion thrusters or Hall thrusters (Osenar, 2004).</h4>
     <img scr="NEPimage.png" alt="NEPimage" width="1400" height="900">
     <h4 style="font-family:calibri;">Liquid propulsion is the most common type of chemical propulsion. Liquid propulsion systems can either be monopropellant (a single propellant fluid) or bi-propellant ( two fluids, a fuel and an oxidizer) ( Glenn Research Centre, 2023). These propellants are stored in tanks and flow towards the engine either by pressure (pressure-fed) or by turbopumps  (pump-fed). This fuel is then ignited in two ways; by the two fuels coming in contact with each other (hypergolic propellants) or by an ignition system (Glenn Research Centre, 2023). Both of these techniques will cause a large amount of thrust to be produced. Figure 3 shows a diagram visualizing a pressure-fed engine.</h4>
@@ -139,6 +139,9 @@ p.ex1 {
     <h4 style="font-family:calibri;">Sesnic, T. (2022) <i>Everyday Astronaut</i>. Available at:<a href="https://everydayastronaut.com/spacex-raptor-engine-comparison/" target="_blank">https://everydayastronaut.com/spacex-raptor-engine-comparison/</a>(Accessed: 22 October 2024)</h4>
 </p>
   
+<video scr="Presentation video and audio in 480p.mp4" width="800" height="450" controls>
+
+</video>
 
  <!-- //////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////// Word count function ////////////////////////////// -->
@@ -175,4 +178,54 @@ p.ex1 {
 </script>
 
 
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Adding last update ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+    <!-- Last commit time display -->
+    <div id="last-updated">Loading last update time...</div>
+    <!-- Verify Button -->
+    <button onclick="verifyLastUpdatedTime()" style="display: block; margin: 10px auto; padding: 8px 16px;">
+        Verify Last Modified Time
+    </button>
+    <script>
+        async function getLastUpdatedTime() {
+            const username = 'nr0025';
+            const repo = 'FY0025';
+           
+            const url = `https://api.github.com/repos/${username}/${repo}/commits`;
+            try {
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json',
+                    }
+                });
+                if (!response.ok) {
+                    throw new Error(`Error fetching data: ${response.status} - ${response.statusText}`);
+                }
+                const commits = await response.json();
+                if (commits && commits.length > 0) {
+                    const lastCommitDate = new Date(commits[0].commit.committer.date);
+                   
+                    // Displaying the time on load
+                    document.getElementById('last-updated').innerText = `Last Modified Time: ${lastCommitDate.toLocaleString()}`;
+                } else {
+                    document.getElementById('last-updated').innerText = 'No commits found in the repository.';
+                }
+            } catch (error) {
+                console.error('Error fetching the last updated time:', error);
+                document.getElementById('last-updated').innerText = 'Error fetching update time. Please check the repository details.';
+            }
+        }
+        // Function to verify the last update time by re-fetching it from the API
+        async function verifyLastUpdatedTime() {
+            document.getElementById('last-updated').innerText = 'Verifying...';
+            await getLastUpdatedTime();
+            alert("Last modified time has been successfully verified from GitHub API.");
+        }
+        // Initial load to display the time on page load
+        window.onload = getLastUpdatedTime;
+    </script>
+    
+</body>
 </html>
