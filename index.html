@@ -86,20 +86,22 @@ p.ex1 {
     <h3 id="Introduction"><b>Introduction</b></h3>
   </P>
   <p class="ex1">
-    
+    <pre id="Introduction_InText">
       <h4 style="font-family:calibri;">As space agencies grow a bigger interest in exploring deeper into space, they must also develop their technology to do so. 
       With travel distances expanding, nuclear propulsion may be the solution engineers have been looking for since they are twice as efficient as chemical rockets meaning they could lower travel times by half (Kotlyar, 2024). 
       Nuclear propulsion simply works by many nuclear reactions generating thrust opposed to chemical rockets where liquid propellants are combusted. 
       This technique can provide high thrust whilst using propellant more efficiently than usual chemical rockets decreasing travel times and increasing payload mass (NASA, 2024). 
       Firstly, an understanding of  how each type of nuclear propulsion system works is discussed followed by a comparison with conventional chemical engines using statistics to outline the benefits of each system.</h4>
-  </p>
+    </pre>
+    </p>
+
 
 
   <p>
     <h3 id="How do different types of propulsion work?"><b>How do different types of propulsion work?</b></h3>
   </p>
   <p class="ex1">
-
+  <p id="Explain_InText">
     <h4 style="font-family:calibri;">The first type of propulsion is nuclear thermal propulsion (NTP). NTP works by running liquid hydrogen through the core of a nuclear reactor which in turn splits uranium atoms which releases heat in the form of fission. The liquid propellant is converted into a hot gas which rapidly expands and leaves the nozzle at a high velocity producing thrust (Office of Nuclear Energy, 2021) as shown in figure 1.</h4>
     <img src="NTPimage.png" alt="NTPimage" width="700" height="450">
     <h4 style="font-family:calibri;">The second type is nuclear electric propulsion (NEP). Much like NTP, NEP uses a reactor to provide heat from fission but this thermal energy is converted into electric power where it is then used to ionize a propellant which accelerates out the nozzle producing thrust. These are call ion thrusters or Hall thrusters (Osenar, 2004).</h4>
@@ -107,13 +109,16 @@ p.ex1 {
     <h4 style="font-family:calibri;">Liquid propulsion is the most common type of chemical propulsion. Liquid propulsion systems can either be monopropellant (a single propellant fluid) or bi-propellant ( two fluids, a fuel and an oxidizer) ( Glenn Research Centre, 2023). These propellants are stored in tanks and flow towards the engine either by pressure (pressure-fed) or by turbopumps  (pump-fed). This fuel is then ignited in two ways; by the two fuels coming in contact with each other (hypergolic propellants) or by an ignition system (Glenn Research Centre, 2023). Both of these techniques will cause a large amount of thrust to be produced. Figure 3 shows a diagram visualizing a pressure-fed engine.</h4>
     <img src="CHMimage.png" alt="CHMimage" width="700" height="450">
   </p>
+  </p>
+
 
 
 <p>  
   <h3 id="Analysis_of_propulsion_systems"><b>Analysis of propulsion systems</b></h3>
 </p>
 <p class="ex1">
-    <h4 style="font-family:calibri;">There are many advantages of nuclear propulsion to chemical propulsion however it comes with its own disadvantages. Efficiency is always an important factor when dealing with any sort of system. In rocketry efficiency is also referred to as specific impulse, which is the amount of thrust produced by a certain amount of propellant (Office of Nuclear Energy, 2021). Nuclear thermal propulsion has a specific impulse of 900 seconds whereas chemical rockets produce a specific impulse of 450 seconds resulting in chemical rockets being half as efficient (Office of Nuclear Energy, 2021). This is due to the propellants being used by each engine. NTP uses hydrogen as its propellant whilst chemical rockets produce a byproduct of water vapor which is much heavier than hydrogen allowing nuclear engines to travel greater distances using less fuel (Office of Nuclear Energy, 2021). 
+   
+  <h4 style="font-family:calibri;">There are many advantages of nuclear propulsion to chemical propulsion however it comes with its own disadvantages. Efficiency is always an important factor when dealing with any sort of system. In rocketry efficiency is also referred to as specific impulse, which is the amount of thrust produced by a certain amount of propellant (Office of Nuclear Energy, 2021). Nuclear thermal propulsion has a specific impulse of 900 seconds whereas chemical rockets produce a specific impulse of 450 seconds resulting in chemical rockets being half as efficient (Office of Nuclear Energy, 2021). This is due to the propellants being used by each engine. NTP uses hydrogen as its propellant whilst chemical rockets produce a byproduct of water vapor which is much heavier than hydrogen allowing nuclear engines to travel greater distances using less fuel (Office of Nuclear Energy, 2021). 
     </h4>
     <h4 style="font-family: calibri;">Although nuclear propulsion has a higher specific impulse, they do not provide enough thrust to take off from Earth like chemical rockets. This is why they would primarily be used on second stages for travelling to other planets once out of our gravitational field where there is no large external force acting against the system. For example SpaceX’s Raptor 2 engine can produce 250 tons of thrust (Sesnic, 2022) whereas an NTP engine will on average produce 11 tons (Kelvey, 2023), roughly 23 times less thrust therefore lowering the possible payload capacity.
     </h4>
@@ -143,40 +148,6 @@ p.ex1 {
     <h4 style="font-family:calibri;">Office of Nuclear Energy (2021) <i>6 Things You Should Know About Nuclear Thermal Propulsion</i>. Available at:<a href="https://www.energy.gov/ne/articles/6-things-you-should-know-about-nuclear-thermal-propulsion#:~:text=NTP%20systems%20work%20by%20pumping,a%20nozzle%20to%20produce%20thrust." target="_blank">https://www.energy.gov/ne/articles/6-things-you-should-know-about-nuclear-thermal-propulsion#:~:text=NTP%20systems%20work%20by%20pumping,a%20nozzle%20to%20produce%20thrust.</a>(Accessed: 23 October 2024) </h4>
     <h4 style="font-family:calibri;">Sesnic, T. (2022) <i>Everyday Astronaut</i>. Available at:<a href="https://everydayastronaut.com/spacex-raptor-engine-comparison/" target="_blank">https://everydayastronaut.com/spacex-raptor-engine-comparison/</a>(Accessed: 22 October 2024)</h4>
 </p>
-  
- <!-- //////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
-  <!-- //////////////////////////////////////////////////////////////////////////////// -->
-<!-- Placeholder for total word count -->
-<p id="totalWordCount"></p>
-<hr>
-<script>
-  // Function to calculate and display word count for a specified section
-  function displayWordCount(sectionId, outputId) {
-    // Get the text content from the specified section
-    const text = document.getElementById(sectionId).textContent;
-    // Split text into words based on spaces and filter out any empty strings
-    const wordArray = text.trim().split(/\s+/);
-    // Count the words
-    const wordCount = wordArray.length;
-    // Return the word count for summing purposes
-    return wordCount;
-  }
-  // Function to calculate and display total word count from selected sections
-  function displayTotalWordCount() {
-    // Calculate word count for each section and accumulate the total
-    const IntroductionCount = displayWordCount("Introduction");
-    const AnalysisCount = displayWordCount("Analysis_of_propulsion_systems");
-    const ExplanationCount= displayWordCount("How do different types of propulsion work?");
-    const ConclusionCount= displayWordCount("Conclusion");
-    // Calculate the sum of all selected sections
-    const totalWordCount = IntroductionCount + AnalysisCount + ExplanationCount + ConclusionCount;
-    // Display the total word count
-    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
-  }
-  // Run the function for specific sections and display total count when the page loads
-  window.onload = displayTotalWordCount;
-</script>
 
 
 <!-- //////////////////////////////////////////////////////////////////////////////// -->
@@ -228,5 +199,43 @@ p.ex1 {
         window.onload = getLastUpdatedTime;
     </script>
     
+
+      
+ <!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- Placeholder for total word count -->
+<p id="totalWordCount"></p>
+<hr>
+<script>
+  // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId, outputId) {
+    // Get the text content from the specified section
+    const text = document.getElementById(sectionId).textContent;
+    // Split text into words based on spaces and filter out any empty strings
+    const wordArray = text.trim().split(/\s+/);
+    // Count the words
+    const wordCount = wordArray.length;
+    // Return the word count for summing purposes
+    return wordCount;
+  }
+  // Function to calculate and display total word count from selected sections
+  function displayTotalWordCount() {
+    // Calculate word count for each section and accumulate the total
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const AnalysisCount = displayWordCount("Analysis_InText");
+    const ExplanationCount= displayWordCount("Explain_InText");
+    const ConclusionCount= displayWordCount("Conclusion");
+    // Calculate the sum of all selected sections
+    const totalWordCount = IntroductionCount + AnalysisCount + ExplanationCount + ConclusionCount;
+    // Display the total word count
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+  }
+  // Run the function for specific sections and display total count when the page loads
+  window.onload = displayTotalWordCount;
+</script>
+
+
 </body>
+
 </html>
